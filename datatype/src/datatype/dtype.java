@@ -13,6 +13,10 @@ public class dtype {
 		System.out.println(value3);	
 	
 		double value4 = 1.6666d;
-		System.out.print(value4);
+		System.out.println(value4);
+		
+		int marker = 512;
+		float percentage = marker * 0.46f;
+		System.out.print(percentage);
 	}
 }
