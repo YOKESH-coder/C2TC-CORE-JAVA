@@ -1,7 +1,6 @@
 package com.cg.entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,40 +8,44 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-/*Serializable(converts object to byte of stream) -  is used for sending the data without any change and fast transaction*/
 
 @Entity
-@Table(name = "employee")
+@Table(name = "child")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Employee implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class Child implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int employeeId;
 	private String name;
-	private double salary;
-	public int getEmployeeId() {
-		return employeeId;
-	}
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
+	private int age;
+	private String gender;
+	private int order;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getSalary() {
-		return salary;
+	public int getAge() {
+		return age;
 	}
-	public void setSalary(double salary) {
-		this.salary = salary;
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public int getOrder() {
+		return order;
+	}
+	public void setOrder(int order) {
+		this.order = order;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
 }
